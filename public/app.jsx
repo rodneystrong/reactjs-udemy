@@ -1,3 +1,14 @@
+var GreeterMessage = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <h1>Some h1</h1>
+        <p>para whatever</p>
+      </div>
+    );
+  }
+})
+
 //using uppercase is norm for components
 //react.createClass() is the most common method. takes
 //only one argument, an options object
@@ -57,6 +68,8 @@ var Greeter = React.createClass({
       <div>
         <h1>Hello {theName + ' from user input'}!</h1>
         <p>So far this is {theMessage}</p>
+
+        <GreeterMessage />
 
         <form onSubmit={this.onButtonClick}>
           <input type="text" ref="name" />
