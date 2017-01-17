@@ -24,6 +24,8 @@ var Greeter = React.createClass({
     //this.props stores our props!
     //make sure this.props.name that 'name' part equals the attribute
     //in your reactDOM.render attribute
+    //notice the ref attr? we use it to save a reference to our input
+    //field. 
     var theName = this.props.name;
     var theMessage = this.props.message;
     return (
