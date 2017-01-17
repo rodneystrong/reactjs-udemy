@@ -9,7 +9,8 @@ var Greeter = React.createClass({
   //the default prop will provide the 'default' value you specify
   getDefaultProps: function() {
     return {
-      name: 'React'
+      name: 'React',
+      message: 'derp derp'
     };
   },
   render: function() {
@@ -17,10 +18,11 @@ var Greeter = React.createClass({
     //make sure this.props.name that 'name' part equals the attribute
     //in your reactDOM.render attribute
     var theName = this.props.name;
+    var theMessage = this.props.message;
     return (
       <div>
         <h1>Hello {userName}!</h1>
-        <p>So far this is alright</p>
+        <p>So far this is {theMessage}</p>
       </div>
     );
   }
