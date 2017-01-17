@@ -4,6 +4,14 @@
 //all the render method expects is some JSX
 //code to be displayed to browser
 var Greeter = React.createClass({
+  //getDefaultProps allows us to specify default values for props
+  //so that if a prop accidentally isn't specifed/provided, then
+  //the default prop will provide the 'default' value you specify
+  getDefaultProps: function() {
+    return {
+      name: 'React'
+    };
+  },
   render: function() {
     //this.props stores our props!
     //make sure this.props.name that 'name' part equals the attribute
