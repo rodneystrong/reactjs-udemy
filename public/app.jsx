@@ -10,7 +10,7 @@ var Greeter = React.createClass({
   getDefaultProps: function() {
     return {
       name: 'React',
-      message: 'derp derp'
+      message: 'default prop derp derp'
     };
   },
   render: function() {
@@ -21,7 +21,7 @@ var Greeter = React.createClass({
     var theMessage = this.props.message;
     return (
       <div>
-        <h1>Hello {userName}!</h1>
+        <h1>Hello {userName + ' from user input'}!</h1>
         <p>So far this is {theMessage}</p>
       </div>
     );
@@ -30,7 +30,7 @@ var Greeter = React.createClass({
 
 //how to pass other types into props
 //just like below!
-var firstName = 'matt';
+var firstName = 'matt from a variable';
 
 //here you can get user input!
 var userName = prompt('what is it');
@@ -39,6 +39,6 @@ var userName = prompt('what is it');
 ReactDOM.render(
   //adding a prop! actually passing a prop to our component. this
   //one is 'name'
-  <Greeter />,
+  <Greeter message="message from the ReactDOM render. not the best way" />,
   document.getElementById('app')
 );
