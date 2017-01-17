@@ -13,6 +13,13 @@ var Greeter = React.createClass({
       message: 'default prop derp derp'
     };
   },
+  onButtonClick: function(e) {
+    e.preventDefault();
+
+    //this represents the DOM node
+    var name = this.refs.name.value;
+    alert(name);
+  },
   render: function() {
     //this.props stores our props!
     //make sure this.props.name that 'name' part equals the attribute
@@ -23,6 +30,11 @@ var Greeter = React.createClass({
       <div>
         <h1>Hello {userName + ' from user input'}!</h1>
         <p>So far this is {theMessage}</p>
+
+        <form onSubmit={this.onButtonClick}>
+          <input type="text" ref="name" />
+          <button>Set Name</button>
+        </form>
       </div>
     );
   }
