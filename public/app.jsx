@@ -13,6 +13,12 @@ var Greeter = React.createClass({
       message: 'default prop derp derp'
     };
   },
+  //built in React Method
+  getInitialState: function() {
+    return {
+      name: this.props.name;
+    };
+  },
   onButtonClick: function(e) {
     e.preventDefault();
 
@@ -25,7 +31,7 @@ var Greeter = React.createClass({
     //make sure this.props.name that 'name' part equals the attribute
     //in your reactDOM.render attribute
     //notice the ref attr? we use it to save a reference to our input
-    //field. 
+    //field.
     var theName = this.props.name;
     var theMessage = this.props.message;
     return (
@@ -56,3 +62,8 @@ ReactDOM.render(
   <Greeter message="message from the ReactDOM render. not the best way" />,
   document.getElementById('app')
 );
+
+//props get passed into a component as you initialize it
+//state is internally maintained and updated by component. component
+//shouldn't update the prop but should update it's own state
+//
