@@ -19,17 +19,24 @@ var Greeter = React.createClass({
     var theName = this.props.name;
     return (
       <div>
-        <h1>Hello {theName}!</h1>
+        <h1>Hello {userName}!</h1>
         <p>So far this is alright</p>
       </div>
     );
   }
 });
 
+//how to pass other types into props
+//just like below!
+var firstName = 'matt';
+
+//here you can get user input!
+var userName = prompt('what is it');
+
 //React.DOM is how we kick off react stuff
 ReactDOM.render(
   //adding a prop! actually passing a prop to our component. this
   //one is 'name'
-  <Greeter name="Andrew"/>,
+  <Greeter />,
   document.getElementById('app')
 );
