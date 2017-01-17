@@ -24,16 +24,22 @@ var Greeter = React.createClass({
   onButtonClick: function(e) {
     e.preventDefault();
 
+    //creating a var for this to make it easier
+    var nameRef = this.refs.name;
+
     //this represents the DOM node
-    var nameInput = this.refs.name.value;
+    var nameInput = nameRef.value;
 
     //this sets the input to blank after user submits
-    this.refs.name.value = '';
+    nameRef.value = '';
 
-    this.setState({
-      //name is the prop name. the value (onthe right) is the var name
-      name: nameInput
-    });
+    if(typeOf name ==== 'string' && name.length > 0) {
+      this.setState({
+        //name is the prop name. the value (onthe right) is the var name
+        name: nameInput
+      });
+    }
+
   },
   render: function() {
     //this.props stores our props!
