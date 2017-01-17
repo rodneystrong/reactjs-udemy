@@ -8,6 +8,7 @@ var Greeter = React.createClass({
     return (
       <div>
         <h1>Hello React!</h1>
+        <p>So far this is alright</p>
       </div>
     );
   }
