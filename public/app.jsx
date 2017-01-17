@@ -15,6 +15,6 @@ var Greeter = React.createClass({
 
 //React.DOM is how we kick off react stuff
 ReactDOM.render(
-  ,
+  <Greeter/>,
   document.getElementById('app')
 );
