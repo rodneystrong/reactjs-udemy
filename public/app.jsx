@@ -33,7 +33,7 @@ var Greeter = React.createClass({
     //this sets the input to blank after user submits
     nameRef.value = '';
 
-    if(typeOf name ==== 'string' && name.length > 0) {
+    if(typeof nameInput==='string' && nameInput.length > 0) {
       this.setState({
         //name is the prop name. the value (onthe right) is the var name
         name: nameInput
