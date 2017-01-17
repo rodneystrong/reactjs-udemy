@@ -7,7 +7,20 @@ var GreeterMessage = React.createClass({
       </div>
     );
   }
-})
+});
+
+var GreeterForm = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <form>
+          <input type="text" ref="age" />
+          <button>Set Age</button>
+        </form>
+      </div>
+    );
+  }
+});
 
 //using uppercase is norm for components
 //react.createClass() is the most common method. takes
@@ -75,6 +88,8 @@ var Greeter = React.createClass({
           <input type="text" ref="name" />
           <button>Set Name</button>
         </form>
+
+        <GreeterForm/>
       </div>
     );
   }
