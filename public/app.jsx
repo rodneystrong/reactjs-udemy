@@ -85,7 +85,7 @@ var Greeter = React.createClass({
 var firstName = 'matt from a variable';
 
 //here you can get user input!
-var userName = prompt('what is it');
+//var userName = prompt('what is it');
 
 //React.DOM is how we kick off react stuff
 ReactDOM.render(
