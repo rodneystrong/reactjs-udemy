@@ -9,6 +9,7 @@ var Greeter = React.createClass({
   //the default prop will provide the 'default' value you specify
   getDefaultProps: function() {
     return {
+      //name is the prop name. the value (onthe right) is the
       name: 'React',
       message: 'default prop derp derp'
     };
@@ -16,15 +17,23 @@ var Greeter = React.createClass({
   //built in React Method
   getInitialState: function() {
     return {
-      name: this.props.name;
+      //name is the prop name. the value (onthe right) is the
+      name: this.props.name
     };
   },
   onButtonClick: function(e) {
     e.preventDefault();
 
     //this represents the DOM node
-    var name = this.refs.name.value;
-    alert(name);
+    var nameInput = this.refs.name.value;
+
+    //this sets the input to blank after user submits
+    this.refs.name.value = '';
+
+    this.setState({
+      //name is the prop name. the value (onthe right) is the var name
+      name: nameInput
+    });
   },
   render: function() {
     //this.props stores our props!
@@ -32,11 +41,15 @@ var Greeter = React.createClass({
     //in your reactDOM.render attribute
     //notice the ref attr? we use it to save a reference to our input
     //field.
-    var theName = this.props.name;
+    //We then changed this.props.name to this.state.name.
+    //in order re-render the state, we call setState above
+    var theName = this.state.name;
+
+
     var theMessage = this.props.message;
     return (
       <div>
-        <h1>Hello {userName + ' from user input'}!</h1>
+        <h1>Hello {theName + ' from user input'}!</h1>
         <p>So far this is {theMessage}</p>
 
         <form onSubmit={this.onButtonClick}>
