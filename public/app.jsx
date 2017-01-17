@@ -5,9 +5,13 @@
 //code to be displayed to browser
 var Greeter = React.createClass({
   render: function() {
+    //this.props stores our props!
+    //make sure this.props.name that 'name' part equals the attribute
+    //in your reactDOM.render attribute
+    var theName = this.props.name;
     return (
       <div>
-        <h1>Hello React!</h1>
+        <h1>Hello {theName}!</h1>
         <p>So far this is alright</p>
       </div>
     );
@@ -16,6 +20,8 @@ var Greeter = React.createClass({
 
 //React.DOM is how we kick off react stuff
 ReactDOM.render(
-  <Greeter/>,
+  //adding a prop! actually passing a prop to our component. this
+  //one is 'name'
+  <Greeter name="Andrew"/>,
   document.getElementById('app')
 );
