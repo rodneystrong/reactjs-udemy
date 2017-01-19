@@ -10,6 +10,25 @@ var GreeterMessage = React.createClass({
 });
 
 var GreeterForm = React.createClass({
+  onFormSubmit: function(e) {
+    e.preventDefault();
+
+    //creating a var for this to make it easier
+    var nameRef = this.refs.name;
+
+    //this represents the DOM node
+    var nameInput = nameRef.value;
+
+    //this sets the input to blank after user submits
+    nameRef.value = '';
+
+    if(typeof nameInput==='string' && nameInput.length > 0) {
+      this.setState({
+        //name is the prop name. the value (onthe right) is the var name
+        name: nameInput
+      });
+    }
+  }
   render: function() {
     return (
       <div>
