@@ -9,6 +9,7 @@ var GreeterMessage = React.createClass({
   }
 });
 
+
 var GreeterForm = React.createClass({
   onFormSubmit: function(e) {
     e.preventDefault();
@@ -28,12 +29,12 @@ var GreeterForm = React.createClass({
         name: nameInput
       });
     }
-  }
+  },
   render: function() {
     return (
       <div>
-        <form>
-          <input type="text" ref="age" />
+        <form onSubmit={this.onFormSubmit}>
+          <input type="text" ref="name" />
           <button>Set Age</button>
         </form>
       </div>
@@ -65,11 +66,10 @@ var Greeter = React.createClass({
     };
   },
   handleNewName: function(name) {
+    //in order for react to re-render the comp, we need to call setState
     this.setState({
-      this.setState({
-        name: name
-      });
-    })
+      name: name
+    });
   },
   render: function() {
     //this.props stores our props!
@@ -90,12 +90,8 @@ var Greeter = React.createClass({
 
         <GreeterMessage />
 
-        <form onSubmit={this.onButtonClick}>
-          <input type="text" ref="name" />
-          <button>Set Name</button>
-        </form>
 
-        <GreeterForm/>
+        <GreeterForm />
       </div>
     );
   }

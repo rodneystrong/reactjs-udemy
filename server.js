@@ -11,5 +11,6 @@ app.use(express.static('public'));
 
 //then start the server
 app.listen(3000, function() {
-  console.log(`'Go to port 3000');
+  console.log(`'Go to port
+                3000'`);
 });
