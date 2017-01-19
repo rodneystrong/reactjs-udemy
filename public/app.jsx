@@ -20,14 +20,14 @@ var GreeterForm = React.createClass({
     //this represents the DOM node
     var nameInput = nameRef.value;
 
-    //this sets the input to blank after user submits
-    nameRef.value = '';
-
     if(typeof nameInput==='string' && nameInput.length > 0) {
-      this.setState({
-        //name is the prop name. the value (onthe right) is the var name
-        name: nameInput
-      });
+
+      //this sets the input to blank after user submits
+      nameRef.value = '';
+      this.props.onNewName(nameInput);
+
+      //name is the prop name. the value (onthe right) is the var name
+      name: nameInput
     }
   },
   render: function() {
@@ -35,7 +35,7 @@ var GreeterForm = React.createClass({
       <div>
         <form onSubmit={this.onFormSubmit}>
           <input type="text" ref="name" />
-          <button>Set Age</button>
+          <button>Set Name</button>
         </form>
       </div>
     );
@@ -90,8 +90,11 @@ var Greeter = React.createClass({
 
         <GreeterMessage />
 
-
-        <GreeterForm />
+        {/*right here, the parent comp Greeter contains the handleNewName
+          method, so we can call it on the child comp GreeterForm as a prop.
+          The naming convention used handleNewName, then onNewName. Notice the
+          'NewName'.*/}
+        <GreeterForm onNewName={this.handleNewName}/>
       </div>
     );
   }
